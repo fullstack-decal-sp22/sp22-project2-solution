@@ -31,6 +31,7 @@ test('Test Map', () => {
 test('Test Calculations', () => {
     let a = Math.random() * 100
     let b = Math.random() * 100
+    // if(operations === null) {return null}
     for (key of Object.keys(operations)) {
         expect(calculations(key, a, b)).toEqual(correct[key](a, b))
     } 

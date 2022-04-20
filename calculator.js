@@ -84,7 +84,6 @@ class Calculator {
  */
 let calculator = new Calculator()
 let result = document.querySelector(".result");
-
 function setListeners() {
   let buttons = document.querySelectorAll(".button");
   for (item of buttons) {
@@ -105,8 +104,8 @@ function click(button) {
   result.innerText = calculator.current;
 }
 
-// module.exports = { 
-//   operations, 
-//   calculations,
-//   Calculator
-// }
+module.exports = { 
+  operations, 
+  calculations,
+  Calculator
+}
