@@ -41,7 +41,7 @@ class Calculator {
   }
 
   backspace() {
-    this.current = Math.floor(current / 10)
+    this.current = Math.floor(this.current / 10)
     return this.current
   }
 
