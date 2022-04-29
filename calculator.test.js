@@ -57,3 +57,11 @@ test('Test 2 Plus 3 Equals 5 Plus 4 Equals 9', () => {
     calculator.compute('=')
     expect(calculator.current).toEqual(9)
 })
+
+test('Test Backspace', () => {
+    let calculator = new Calculator()
+    calculator.append(8)
+    calculator.append(4)
+    calculator.backspace()
+    expect(calculator.current).toEqual(8)
+})
