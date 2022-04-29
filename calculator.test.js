@@ -44,3 +44,16 @@ test('Test Compute And Clear', () => {
     calculator.append(7)
     expect(calculator.compute('C')).toEqual(0)
 })
+
+
+test('Test 2 Plus 3 Equals 5 Plus 4 Equals 9', () => {
+    let calculator = new Calculator()
+    calculator.append(2)
+    calculator.store('+')
+    calculator.append(3)
+    calculator.compute('=')
+    calculator.store('+')
+    calculator.append(4)
+    calculator.compute('=')
+    expect(calculator.current).toEqual(9)
+})
