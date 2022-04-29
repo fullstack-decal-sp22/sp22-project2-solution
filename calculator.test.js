@@ -26,3 +26,12 @@ test('Test Multiply', () => {
     calculator.append(7)
     expect(calculator.equals()).toEqual(392)
 })
+
+test('Test Divide', () => {
+    let calculator = new Calculator()
+    calculator.append(2)
+    calculator.append(4)
+    calculator.store('/')
+    calculator.append(6)
+    expect(calculator.equals()).toEqual(4)
+})
