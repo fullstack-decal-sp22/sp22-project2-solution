@@ -111,3 +111,13 @@ test('9 Times 9 Times 9 Equals 729 Minus 6 Equals', () => {
     expect(calculator.current).toEqual(723)
 
 })
+
+test('Testing Decimals Work', () => {
+    let calculator = new Calculator()
+    calculator.append(3)
+    calculator.store('/')
+    calculator.append(2)
+    calculator.compute('=')
+    expect(calculator.current).toEqual(1.5)
+})
+

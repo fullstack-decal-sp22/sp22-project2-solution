@@ -49,7 +49,7 @@ class Calculator {
   equals() {
     this.current = this.operator === null ?
       this.buffer :
-      Math.floor(calculations(this.operator, this.buffer, this.current))
+      calculations(this.operator, this.buffer, this.current)
     console.log(this.current)
     this.operator = null
     this.buffer = 0
