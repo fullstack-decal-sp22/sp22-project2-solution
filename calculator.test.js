@@ -79,33 +79,3 @@ test('Test 123 Times 7 Minus 5', () => {
     expect(calculator.current).toEqual(856)
 
 })
-
-test('Test that 3 operations in a row work: 9 Times 9 Times 9 Minus 6 Equals 723', () => {
-    let calculator = new Calculator()
-    calculator.append(9)
-    calculator.store('*')
-    calculator.append(9)
-    calculator.store('*')
-    calculator.append(9)
-    calculator.store('-')
-    calculator.append(6)
-    calculator.compute('=')
-    expect(calculator.current).toEqual(723)
-
-})
-
-test('9 Times 9 Times 9 Equals 729 Minus 6 Equals', () => {
-    let calculator = new Calculator()
-    calculator.append(9)
-    calculator.store('*')
-    calculator.append(9)
-    calculator.store('*')
-    calculator.append(9)
-    calculator.compute('=')
-    expect(calculator.current).toEqual(729)
-    calculator.store('-')
-    calculator.append(6)
-    calculator.compute('=')
-    expect(calculator.current).toEqual(721)
-
-})
