@@ -132,3 +132,10 @@ test('Testing Negative Numbers Work ', () => {
     expect(calculator.current).toEqual(32)
 })
 
+test('Testing First number can be Negative', () => {
+    let calculator = new Calculator()
+    calculator.store('-')
+    calculator.append(5)
+    calculator.compute('=')    
+    expect(calculator.current).toEqual(-5)
+})
