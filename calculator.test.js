@@ -121,3 +121,14 @@ test('Testing Decimals Work', () => {
     expect(calculator.current).toEqual(1.5)
 })
 
+test('Testing Negative Numbers Work ', () => {
+    let calculator = new Calculator()
+    calculator.append(2)
+    calculator.store('-')
+    calculator.append(5)
+    calculator.store('*')
+    calculator.append(-6)
+    calculator.compute('=')
+    expect(calculator.current).toEqual(32)
+})
+
