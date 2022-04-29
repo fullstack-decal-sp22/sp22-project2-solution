@@ -17,3 +17,12 @@ test('Test Subtract', () => {
     calculator.append(7)
     expect(calculator.equals()).toEqual(49)
 })
+
+test('Test Multiply', () => {
+    let calculator = new Calculator()
+    calculator.append(5)
+    calculator.append(6)
+    calculator.store('*')
+    calculator.append(7)
+    expect(calculator.equals()).toEqual(392)
+})
