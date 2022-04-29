@@ -9,3 +9,11 @@ test('Test Typing Numbers', () => {
     expect(calculator.current).toEqual(34)    
 })
 
+test('Test Subtract', () => {
+    let calculator = new Calculator()
+    calculator.append(5)
+    calculator.append(6)
+    calculator.store('-')
+    calculator.append(7)
+    expect(calculator.equals()).toEqual(49)
+})
