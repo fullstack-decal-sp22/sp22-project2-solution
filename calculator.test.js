@@ -35,3 +35,12 @@ test('Test Divide', () => {
     calculator.append(6)
     expect(calculator.equals()).toEqual(4)
 })
+
+test('Test Compute And Clear', () => {
+    let calculator = new Calculator()
+    calculator.append(5)
+    calculator.append(6)
+    calculator.store('*')
+    calculator.append(7)
+    expect(calculator.compute('C')).toEqual(0)
+})
