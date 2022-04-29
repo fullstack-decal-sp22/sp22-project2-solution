@@ -65,3 +65,47 @@ test('Test Backspace', () => {
     calculator.backspace()
     expect(calculator.current).toEqual(8)
 })
+
+test('Test 123 Times 7 Minus 5', () => {
+    let calculator = new Calculator()
+    calculator.append(1)
+    calculator.append(2)
+    calculator.append(3)
+    calculator.store('*')
+    calculator.append(7)
+    calculator.store('-')
+    calculator.append(5)
+    calculator.compute('=')
+    expect(calculator.current).toEqual(856)
+
+})
+
+test('Test that 3 operations in a row work: 9 Times 9 Times 9 Minus 6 Equals 723', () => {
+    let calculator = new Calculator()
+    calculator.append(9)
+    calculator.store('*')
+    calculator.append(9)
+    calculator.store('*')
+    calculator.append(9)
+    calculator.store('-')
+    calculator.append(6)
+    calculator.compute('=')
+    expect(calculator.current).toEqual(723)
+
+})
+
+test('9 Times 9 Times 9 Equals 729 Minus 6 Equals', () => {
+    let calculator = new Calculator()
+    calculator.append(9)
+    calculator.store('*')
+    calculator.append(9)
+    calculator.store('*')
+    calculator.append(9)
+    calculator.compute('=')
+    expect(calculator.current).toEqual(729)
+    calculator.store('-')
+    calculator.append(6)
+    calculator.compute('=')
+    expect(calculator.current).toEqual(721)
+
+})
