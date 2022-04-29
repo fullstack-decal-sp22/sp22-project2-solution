@@ -126,10 +126,8 @@ test('Testing Negative Numbers Work ', () => {
     calculator.append(2)
     calculator.store('-')
     calculator.append(5)
-    calculator.store('*')
-    calculator.append(-6)
     calculator.compute('=')
-    expect(calculator.current).toEqual(32)
+    expect(calculator.current).toEqual(-3)
 })
 
 test('Testing First number can be Negative', () => {
