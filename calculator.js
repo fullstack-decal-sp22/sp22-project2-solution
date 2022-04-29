@@ -24,9 +24,10 @@ function calculations(operator, a, b) {
  */
 class Calculator {
   constructor() {
-    this.current = 0
-    this.buffer = 0
-    this.operator = null
+    this.current = 0 //current number that's showing
+    this.buffer = 0 //used to store the result of the previous total
+    this.operator = null //used to store the operator
+    this.total = 0
   }
 
   append(digit) { 
@@ -47,17 +48,45 @@ class Calculator {
 
   equals() {
     this.current = this.operator === null ?
-      current :
+      this.buffer :
       Math.floor(calculations(this.operator, this.buffer, this.current))
+      // this.buffer
     console.log(this.current)
+    this.operator = null
+    this.buffer = 0
+  
     return this.current
   }
+  // current is going to be set to 0 always in the store
+  // bufffer changed to hold previous ccurrent 
+  // UNLESS operator exists, then cary it out
 
-  store(symbol) {
-    this.buffer = this.current
+
+  store(symbol) { //called with any operator
+    console.log("symbol", symbol)
+    console.log("current before", this.current)
+    if (this.operator === null) {
+      this.buffer = parseInt(this.current)
+      this.total = this.current;
+    } else {
+      this.buffer = calculations(this.operator, this.buffer, parseInt(this.current))
+    }
     this.current = 0
+    // console.log("bugger before", this.buffer)
+    // if (this.operator === null) {
+    //   this.buffer += parseInt(this.current) //add if it hasn't seen an operator before
+    //   this.current = 0    
+    // } else{
+    //   this.buffer = calculations(symbol, this.buffer, parseInt(this.current))
+    //   this.current = parseInt(this.buffer)
+    //   this.operator = null
+    // }
+    // console.log("buffer", this.buffer)
+
+    // // String(this.buffer)
+    // console.log("current", this.current)
+
     this.operator = symbol
-    return this.current
   }
 
   compute(symbol) {
