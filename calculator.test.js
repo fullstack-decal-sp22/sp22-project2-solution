@@ -137,3 +137,5 @@ test('Testing First number can be Negative', () => {
     calculator.compute('=')    
     expect(calculator.current).toEqual(-5)
 })
+
+
